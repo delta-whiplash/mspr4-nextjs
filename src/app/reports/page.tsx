@@ -52,7 +52,7 @@ export default function ReportsPage() {
           marginLeft: 240,
           width: "100%",
           minHeight: "100vh",
-          background: "linear-gradient(120deg, #161b22 70%, #232946 100%)",
+          background: "var(--color-bg)",
           padding: "2.5rem 2rem",
         }}
         aria-label="Rapports"
@@ -73,7 +73,7 @@ export default function ReportsPage() {
             aria-label="Liste des rapports"
           >
             <thead>
-              <tr style={{ color: "#fff", background: "#232946" }}>
+              <tr style={{ color: "var(--color-text)", background: "var(--color-bg-paper)" }}>
                 <th style={{ padding: "1em" }}>Date</th>
                 <th>Type</th>
                 <th>Statut</th>
@@ -83,7 +83,7 @@ export default function ReportsPage() {
             </thead>
             <tbody>
               {fakeReports.map((r) => (
-                <tr key={r.id} style={{ color: "#fff", textAlign: "center" }}>
+                <tr key={r.id} style={{ color: "var(--color-text)", textAlign: "center" }}>
                   <td style={{ padding: "1em" }}>{r.date}</td>
                   <td>{r.type}</td>
                   <td>
@@ -93,15 +93,15 @@ export default function ReportsPage() {
                         borderRadius: 8,
                         background:
                           r.status === "Terminé"
-                            ? "#3a86ff33"
+                            ? "var(--color-primary)22"
                             : r.status === "En cours"
-                            ? "#4361ee33"
-                            : "#5e60ce33",
+                            ? "var(--color-secondary)22"
+                            : "#5e60ce22",
                         color:
                           r.status === "Terminé"
-                            ? "#3a86ff"
+                            ? "var(--color-primary)"
                             : r.status === "En cours"
-                            ? "#4361ee"
+                            ? "var(--color-secondary)"
                             : "#5e60ce",
                         fontWeight: 700,
                       }}
@@ -114,11 +114,11 @@ export default function ReportsPage() {
                       style={{
                         width: 80,
                         height: 12,
-                        background: "#232946",
+                        background: "var(--color-bg-paper)",
                         borderRadius: 6,
                         overflow: "hidden",
                         margin: "0 auto",
-                        boxShadow: "0 0 8px #3a86ff22",
+                        boxShadow: "0 0 8px var(--color-primary)22",
                       }}
                     >
                       <div
@@ -127,16 +127,16 @@ export default function ReportsPage() {
                           height: "100%",
                           background:
                             r.score > 80
-                              ? "linear-gradient(90deg, #3a86ff, #4361ee)"
+                              ? "linear-gradient(90deg, var(--color-primary), var(--color-secondary))"
                               : r.score > 0
-                              ? "linear-gradient(90deg, #5e60ce, #4361ee)"
+                              ? "linear-gradient(90deg, #5e60ce, var(--color-secondary))"
                               : "#5e60ce",
                           borderRadius: 6,
                           transition: "width 0.5s",
                         }}
                       />
                     </div>
-                    <span style={{ fontWeight: 700, color: "#fff", fontSize: "0.95em" }}>
+                    <span style={{ fontWeight: 700, color: "var(--color-text)", fontSize: "0.95em" }}>
                       {r.score > 0 ? r.score + "%" : "-"}
                     </span>
                   </td>

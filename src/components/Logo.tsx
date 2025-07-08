@@ -1,22 +1,49 @@
 // src/components/Logo.tsx
 import React from "react";
 
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+
 export default function Logo() {
   return (
-    <div
-      style={{
-        fontFamily: "monospace",
-        fontWeight: "bold",
-        fontSize: "2.2rem",
-        color: "#00fff7",
-        textShadow: "0 0 12px #00fff7, 0 0 32px #7f00ff",
-        letterSpacing: "0.1em",
-        marginBottom: "2rem",
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        px: 2,
+        py: 1,
+        mb: 4,
+        borderRadius: 3,
+        background: "linear-gradient(90deg, rgba(255,255,255,0.5) 0%, rgba(127,0,255,0.10) 100%)",
+        boxShadow: "0 4px 24px 0 rgba(31, 38, 135, 0.10)",
+        backdropFilter: "blur(8px)",
         userSelect: "none",
       }}
     >
-      <span style={{ color: "#7f00ff" }}>CYBER</span>
-      <span style={{ color: "#00fff7" }}>SaaS</span>
-    </div>
+      <Typography
+        variant="h5"
+        sx={{
+          fontWeight: 700,
+          letterSpacing: "0.08em",
+          color: "primary.main",
+          mr: 1,
+          fontFamily: "var(--font-family)",
+        }}
+      >
+        CYBER
+      </Typography>
+      <Typography
+        variant="h5"
+        sx={{
+          fontWeight: 700,
+          letterSpacing: "0.08em",
+          color: "secondary.main",
+          fontFamily: "var(--font-family)",
+        }}
+      >
+        SaaS
+      </Typography>
+    </Box>
   );
 }

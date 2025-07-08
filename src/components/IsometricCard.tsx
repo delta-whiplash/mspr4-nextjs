@@ -19,11 +19,11 @@ export default function IsometricCard({
       style={{
         width,
         height,
-        background: "linear-gradient(135deg, #232946 60%, #1a223f 100%)",
-        color: "#fff",
+        background: "linear-gradient(135deg, var(--color-bg) 60%, #1a223f 100%)",
+        color: "var(--color-text)",
         borderRadius: 18,
         boxShadow:
-          "0 8px 32px 0 #1a223f55, 0 1.5px 0 #3a506b, 0 0.5px 0 #232946",
+          "0 8px 32px 0 #1a223f55, 0 1.5px 0 #3a506b, 0 0.5px 0 var(--color-bg)",
         transform: "skewY(-12deg) rotate(-8deg)",
         padding: "2rem 1.5rem",
         margin: "1.5rem",

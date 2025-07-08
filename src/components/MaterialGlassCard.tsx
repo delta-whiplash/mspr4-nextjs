@@ -1,5 +1,7 @@
 // src/components/MaterialGlassCard.tsx
 import React, { ReactNode } from "react";
+import Paper from "@mui/material/Paper";
+import { useTheme } from "@mui/material/styles";
 
 type MaterialGlassCardProps = {
   children: ReactNode;
@@ -18,19 +20,21 @@ export default function MaterialGlassCard({
   ariaLabel,
   role = "region",
 }: MaterialGlassCardProps) {
+  const theme = useTheme();
+  const isLight = theme.palette.mode === "light";
   return (
-    <section
+    <Paper
       aria-label={ariaLabel}
       role={role}
       tabIndex={0}
-      style={{
+      elevation={4}
+      sx={{
         width,
         height,
-        background: "rgba(255,255,255,0.12)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-        borderRadius: 20,
-        boxShadow: "0 4px 32px 0 #1a223f33, 0 1.5px 0 #3a506b, 0 0.5px 0 #232946",
+        borderRadius: 4,
+        background: "var(--color-card-glass)",
+        backdropFilter: "blur(16px)",
+        boxShadow: "var(--color-card-shadow)",
         padding: "2rem 1.5rem",
         margin: "1.5rem",
         display: "flex",
@@ -39,14 +43,15 @@ export default function MaterialGlassCard({
         alignItems: "flex-start",
         position: "relative",
         outline: "none",
+        border: "1.5px solid var(--color-card-border)",
         transition: "box-shadow 0.2s, border 0.2s",
-        border: "1.5px solid rgba(255,255,255,0.18)",
+        "&:focus": {
+          boxShadow: "0 0 0 3px var(--color-primary)88, var(--color-card-shadow)",
+        },
         ...style,
       }}
-      onFocus={e => (e.currentTarget.style.boxShadow = "0 0 0 3px #3a86ff88, 0 4px 32px 0 #1a223f33")}
-      onBlur={e => (e.currentTarget.style.boxShadow = "0 4px 32px 0 #1a223f33, 0 1.5px 0 #3a506b, 0 0.5px 0 #232946")}
     >
       {children}
-    </section>
+    </Paper>
   );
 }

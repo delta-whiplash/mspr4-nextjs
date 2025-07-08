@@ -2,23 +2,32 @@
 import React from "react";
 import Link from "next/link";
 import Logo from "./Logo";
+import IconButton from "@mui/material/IconButton";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import DescriptionIcon from "@mui/icons-material/Description";
+import LogoutIcon from "@mui/icons-material/Logout";
+import { useThemeMode } from "./ThemeProvider";
 
 const navItems = [
-  { href: "/dashboard", label: "Tableau de bord", icon: "📊" },
-  { href: "/reports", label: "Rapports", icon: "📄" },
-  { href: "/login", label: "Déconnexion", icon: "🚪" },
+  { href: "/dashboard", label: "Tableau de bord", icon: <DashboardIcon /> },
+  { href: "/reports", label: "Rapports", icon: <DescriptionIcon /> },
+  { href: "/login", label: "Déconnexion", icon: <LogoutIcon /> },
 ];
 
 export default function Sidebar() {
+  const { mode, toggleTheme } = useThemeMode();
+
   return (
     <aside
       style={{
         width: 240,
-        background: "linear-gradient(180deg, #181c2f 60%, #7f00ff 100%)",
-        color: "#fff",
+        background: "var(--color-sidebar-gradient)",
+        color: "var(--color-text)",
         minHeight: "100vh",
         padding: "2rem 1rem",
-        boxShadow: "2px 0 24px #7f00ff44",
+        boxShadow: "var(--color-sidebar-shadow)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -30,6 +39,19 @@ export default function Sidebar() {
       }}
     >
       <Logo />
+      <IconButton
+        onClick={toggleTheme}
+        color="inherit"
+        aria-label="Toggle theme"
+        sx={{
+          mb: 1,
+          background: "var(--color-sidebar-link-bg)",
+          boxShadow: "var(--color-sidebar-link-shadow)",
+          backdropFilter: "blur(8px)",
+        }}
+      >
+        {mode === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
+      </IconButton>
       <nav style={{ width: "100%" }}>
         <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
           {navItems.map((item) => (
@@ -37,17 +59,20 @@ export default function Sidebar() {
               <Link
                 href={item.href}
                 style={{
-                  color: "#fff",
+                  color: "var(--color-link)",
                   textDecoration: "none",
-                  fontWeight: 600,
+                  fontWeight: "var(--font-weight-medium)",
                   fontSize: "1.1rem",
+                  fontFamily: "var(--font-family)",
                   display: "flex",
                   alignItems: "center",
                   gap: "0.7em",
                   padding: "0.7em 1em",
-                  borderRadius: 8,
-                  background: "rgba(127,0,255,0.08)",
+                  borderRadius: 12,
+                  background: "var(--color-sidebar-link-bg)",
                   transition: "background 0.2s",
+                  boxShadow: "var(--color-sidebar-link-shadow)",
+                  backdropFilter: "blur(8px)",
                 }}
               >
                 <span>{item.icon}</span>

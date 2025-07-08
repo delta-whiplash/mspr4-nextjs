@@ -44,7 +44,7 @@ export default function DashboardPage() {
           marginLeft: 240,
           width: "100%",
           minHeight: "100vh",
-          background: "linear-gradient(120deg, #161b22 70%, #232946 100%)",
+          background: "var(--color-bg)",
           padding: "2.5rem 2rem",
         }}
         aria-label="Tableau de bord"
@@ -63,10 +63,10 @@ export default function DashboardPage() {
             }}
           />
           <div>
-            <div style={{ color: "#fff", fontWeight: 700, fontSize: "1.5rem" }}>
+            <div style={{ color: "var(--color-text)", fontWeight: "var(--font-weight-bold)", fontSize: "1.5rem", fontFamily: "var(--font-family)" }}>
               Bienvenue, <span style={{ color: "#3a86ff" }}>RSSI Santé</span>
             </div>
-            <div style={{ color: "#4361ee", fontWeight: 500 }}>Démo Cybersécurité SaaS</div>
+            <div style={{ color: "#4361ee", fontWeight: "var(--font-weight-medium)", fontFamily: "var(--font-family)" }}>Démo Cybersécurité SaaS</div>
           </div>
         </div>
         <div
@@ -96,8 +96,9 @@ export default function DashboardPage() {
           style={{
             background: "linear-gradient(90deg, #4361ee 0%, #3a86ff 100%)",
             color: "#fff",
-            fontWeight: 700,
+            fontWeight: "var(--font-weight-bold)",
             fontSize: "1.1rem",
+            fontFamily: "var(--font-family)",
             border: "none",
             borderRadius: 8,
             padding: "0.9em 1.5em",

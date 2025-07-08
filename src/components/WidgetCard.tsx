@@ -20,8 +20,8 @@ export default function WidgetCard({
   return (
     <MaterialGlassCard ariaLabel={title} style={{ minWidth: 220, minHeight: 120, borderLeft: `6px solid ${accent}` }}>
       <div style={{ fontSize: "1.7rem", marginBottom: 8, color: accent }}>{icon}</div>
-      <div style={{ fontWeight: 700, fontSize: "1.1rem", color: accent }}>{title}</div>
-      <div style={{ fontSize: "2.1rem", fontWeight: 800, color: "#fff", margin: "0.3em 0" }}>
+      <div style={{ fontWeight: "var(--font-weight-bold)", fontSize: "1.1rem", color: accent, fontFamily: "var(--font-family)" }}>{title}</div>
+      <div style={{ fontSize: "2.1rem", fontWeight: "var(--font-weight-extra-bold)", color: "var(--color-text)", margin: "0.3em 0", fontFamily: "var(--font-family)" }}>
         {value}
       </div>
       {children}
