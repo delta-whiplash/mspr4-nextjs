@@ -1,13 +1,13 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #232946;
+  --foreground: #ededed;
+  --primary: #3a86ff;
+  --secondary: #4361ee;
+  --accent: #5e60ce;
+  --card-bg: #232946;
+  --card-shadow: #1a223f55;
+  --sidebar-bg: #161b22;
+  --sidebar-shadow: #23294688;
 }
 
 html,
@@ -19,7 +19,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,12 +31,41 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--primary);
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.saas-dark {
+  background: var(--background) !important;
+  color: var(--foreground) !important;
+  min-height: 100vh;
+}
+
+.saas-dark a {
+  color: var(--primary);
+  text-shadow: none;
+}
+
+.saas-dark input,
+.saas-dark button,
+.saas-dark select,
+.saas-dark textarea {
+  background: #232946;
+  color: #fff;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  padding: 0.7em;
+}
+
+.saas-dark ::selection {
+  background: #3a86ff33;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #232946;
+}
+::-webkit-scrollbar-thumb {
+  background: #161b22;
+  border-radius: 8px;
 }
