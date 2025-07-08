@@ -21,7 +21,6 @@ export default function MaterialGlassCard({
   role = "region",
 }: MaterialGlassCardProps) {
   const theme = useTheme();
-  const isLight = theme.palette.mode === "light";
   return (
     <Paper
       aria-label={ariaLabel}

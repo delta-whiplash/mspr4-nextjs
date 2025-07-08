@@ -85,7 +85,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     setMode(preferred);
     setHydrated(true);
     setHtmlDataTheme(preferred);
-    // eslint-disable-next-line no-console
     console.log("[ThemeProvider][useEffect] Hydrated, mode set to:", preferred, new Date().toISOString());
     if (typeof window !== "undefined") {
       window.localStorage.setItem("theme-mode", preferred);

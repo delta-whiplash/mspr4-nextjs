@@ -12,11 +12,6 @@ export default function Notification({
   type = "info",
   onClose,
 }: NotificationProps) {
-  const colors = {
-    success: "#00fff7",
-    error: "#ff00c8",
-    info: "#7f00ff",
-  };
   return (
     <div
       style={{
