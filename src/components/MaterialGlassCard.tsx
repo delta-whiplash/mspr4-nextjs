@@ -1,7 +1,6 @@
 // src/components/MaterialGlassCard.tsx
 import React, { ReactNode } from "react";
 import Paper from "@mui/material/Paper";
-import { useTheme } from "@mui/material/styles";
 
 type MaterialGlassCardProps = {
   children: ReactNode;

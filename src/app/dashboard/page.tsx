@@ -51,7 +51,6 @@ export default function DashboardPage() {
         aria-label="Tableau de bord"
       >
         <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", marginBottom: 32 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <Image
             src="https://api.dicebear.com/7.x/identicon/svg?seed=cyber"
             alt="avatar utilisateur"
