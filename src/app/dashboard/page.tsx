@@ -1,6 +1,7 @@
 // src/app/dashboard/page.tsx
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import Sidebar from "@/components/Sidebar";
 import WidgetCard from "@/components/WidgetCard";
 import AnimatedChart from "@/components/AnimatedChart";
@@ -50,7 +51,8 @@ export default function DashboardPage() {
         aria-label="Tableau de bord"
       >
         <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", marginBottom: 32 }}>
-          <img
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <Image
             src="https://api.dicebear.com/7.x/identicon/svg?seed=cyber"
             alt="avatar utilisateur"
             width={56}
@@ -61,6 +63,8 @@ export default function DashboardPage() {
               boxShadow: "0 0 16px #3a86ff33",
               background: "#232946",
             }}
+            priority
+            unoptimized
           />
           <div>
             <div style={{ color: "var(--color-text)", fontWeight: "var(--font-weight-bold)", fontSize: "1.5rem", fontFamily: "var(--font-family)" }}>

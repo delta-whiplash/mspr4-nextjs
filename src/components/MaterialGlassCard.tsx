@@ -20,7 +20,6 @@ export default function MaterialGlassCard({
   ariaLabel,
   role = "region",
 }: MaterialGlassCardProps) {
-  const theme = useTheme();
   return (
     <Paper
       aria-label={ariaLabel}
